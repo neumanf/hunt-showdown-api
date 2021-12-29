@@ -1,3 +1,4 @@
+using HuntShowdownAPI.Services;
 using Microsoft.AspNetCore.Mvc;
 
 namespace HuntShowdownAPI.Controllers
@@ -6,13 +7,18 @@ namespace HuntShowdownAPI.Controllers
     [ApiController]
     public class WeaponsController : ControllerBase
     {
+        private readonly WeaponsService _weaponsService;
+
+        public WeaponsController(WeaponsService weaponsService)
+        {
+            _weaponsService = weaponsService;
+        }
+
         [HttpGet("")]
         public IActionResult GetAll()
         {
-            Message message = new("Weapons endpoint");
-            return Ok(message);
+            var weapons = _weaponsService.GetAll();
+            return Ok(weapons);
         }
     }
-
-    public record Message(string Text);
 }
