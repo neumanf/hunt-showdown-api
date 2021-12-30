@@ -16,4 +16,9 @@ public class WeaponsService
     {
         return _context.Weapons.ToList();
     }
+    
+    public Weapon? GetBySlug(string slug)
+    {
+        return _context.Weapons.FirstOrDefault(weapon => weapon.Slug == slug);
+    }
 }

@@ -20,5 +20,15 @@ namespace HuntShowdownAPI.Controllers
             var weapons = _weaponsService.GetAll();
             return Ok(weapons);
         }
+        
+        [HttpGet("{slug}")]
+        public IActionResult GetBySlug(string slug)
+        {
+            var weapon = _weaponsService.GetBySlug(slug);
+
+            if (weapon == null) return NotFound();
+
+            return Ok(weapon);
+        }
     }
 }
