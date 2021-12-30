@@ -15,9 +15,10 @@ namespace HuntShowdownAPI.Controllers
         }
 
         [HttpGet("")]
-        public IActionResult GetAll()
+        public IActionResult GetAll(string? search = null)
         {
-            var weapons = _weaponsService.GetAll();
+            var weapons = _weaponsService.GetAll(search);
+            
             return Ok(weapons);
         }
         

@@ -12,9 +12,11 @@ public class WeaponsService
         _context = context;
     }
 
-    public List<Weapon> GetAll()
+    public List<Weapon> GetAll(string? search)
     {
-        return _context.Weapons.ToList();
+        if(search == null) return _context.Weapons.ToList();
+        
+        return _context.Weapons.Where(weapon => weapon.Name.ToLower().Contains(search.ToLower())).ToList();
     }
     
     public Weapon? GetBySlug(string slug)
