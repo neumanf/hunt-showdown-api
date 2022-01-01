@@ -1,26 +1,27 @@
 using HuntShowdownAPI.Data;
 using HuntShowdownAPI.Models;
+using HuntShowdownAPI.Repositories;
 
 namespace HuntShowdownAPI.Services;
 
 public class WeaponsService
 {
-    private readonly AppDbContext _context;
+    private readonly WeaponsRepository _weaponsRepository;
     
-    public WeaponsService(AppDbContext context)
+    public WeaponsService(WeaponsRepository weaponsRepository)
     {
-        _context = context;
+        _weaponsRepository = weaponsRepository;
     }
 
     public List<Weapon> GetAll(string? search)
     {
-        if(search == null) return _context.Weapons.ToList();
+        if(search == null) return _weaponsRepository.GetAll();
         
-        return _context.Weapons.Where(weapon => weapon.Name.ToLower().Contains(search.ToLower())).ToList();
+        return _weaponsRepository.SearchByName(search);
     }
     
     public Weapon? GetBySlug(string slug)
     {
-        return _context.Weapons.FirstOrDefault(weapon => weapon.Slug == slug);
+        return _weaponsRepository.GetBySlug(slug);
     }
 }
