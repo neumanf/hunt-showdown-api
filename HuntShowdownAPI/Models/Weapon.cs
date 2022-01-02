@@ -1,7 +1,10 @@
+using System.Text.Json.Serialization;
+
 namespace HuntShowdownAPI.Models;
 
 public class Weapon
 {
+    [JsonIgnore]
     public int Id { get; set; }
     
     public string Slug { get; set; }
