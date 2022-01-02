@@ -1,5 +1,6 @@
 using HuntShowdownAPI.Data;
 using HuntShowdownAPI.Models;
+using Microsoft.EntityFrameworkCore;
 
 namespace HuntShowdownAPI.Repositories;
 
@@ -12,19 +13,18 @@ public class WeaponsRepository
         _context = context;
     }
 
-    public List<Weapon> GetAll()
+    public async Task<List<Weapon>> GetAll()
     {
-        return _context.Weapons.ToList();
+        return await _context.Weapons.ToListAsync();
     }
     
-    public List<Weapon> SearchByName(string name)
+    public async Task<List<Weapon>> SearchByName(string name)
     {
-        return _context.Weapons.Where(weapon => weapon.Name.ToLower().Contains(name.ToLower())).ToList();
+        return await _context.Weapons.Where(weapon => weapon.Name.ToLower().Contains(name.ToLower())).ToListAsync();
     }
 
-    public Weapon? GetBySlug(string slug)
+    public async Task<Weapon?> GetBySlug(string slug)
     {
-        return _context.Weapons.FirstOrDefault(weapon => weapon.Slug == slug);
+        return await _context.Weapons.FirstOrDefaultAsync(weapon => weapon.Slug == slug);
     }
-
 }

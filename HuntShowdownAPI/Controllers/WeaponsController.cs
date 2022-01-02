@@ -15,17 +15,17 @@ namespace HuntShowdownAPI.Controllers
         }
 
         [HttpGet("")]
-        public IActionResult GetAll(string? search = null)
+        public async Task<IActionResult> GetAll(string? search = null)
         {
-            var weapons = _weaponsService.GetAll(search);
+            var weapons = await _weaponsService.GetAll(search);
             
             return Ok(weapons);
         }
         
         [HttpGet("{slug}")]
-        public IActionResult GetBySlug(string slug)
+        public async Task<IActionResult> GetBySlug(string slug)
         {
-            var weapon = _weaponsService.GetBySlug(slug);
+            var weapon = await _weaponsService.GetBySlug(slug);
 
             if (weapon == null) return NotFound();
 

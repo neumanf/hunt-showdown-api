@@ -13,15 +13,15 @@ public class WeaponsService
         _weaponsRepository = weaponsRepository;
     }
 
-    public List<Weapon> GetAll(string? search)
+    public async Task<List<Weapon>> GetAll(string? search)
     {
-        if(search == null) return _weaponsRepository.GetAll();
+        if(search == null) return await _weaponsRepository.GetAll();
         
-        return _weaponsRepository.SearchByName(search);
+        return await _weaponsRepository.SearchByName(search);
     }
     
-    public Weapon? GetBySlug(string slug)
+    public async Task<Weapon?> GetBySlug(string slug)
     {
-        return _weaponsRepository.GetBySlug(slug);
+        return await _weaponsRepository.GetBySlug(slug);
     }
 }
