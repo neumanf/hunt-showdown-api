@@ -7,9 +7,9 @@ namespace HuntShowdownAPI.Controllers
     [ApiController]
     public class WeaponsController : ControllerBase
     {
-        private readonly WeaponsService _weaponsService;
+        private readonly IWeaponsService _weaponsService;
 
-        public WeaponsController(WeaponsService weaponsService)
+        public WeaponsController(IWeaponsService weaponsService)
         {
             _weaponsService = weaponsService;
         }

@@ -4,7 +4,7 @@ using Microsoft.EntityFrameworkCore;
 
 namespace HuntShowdownAPI.Repositories;
 
-public class WeaponsRepository
+public class WeaponsRepository : IWeaponsRepository
 {
     private readonly AppDbContext _context;
     

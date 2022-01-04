@@ -4,11 +4,11 @@ using HuntShowdownAPI.Repositories;
 
 namespace HuntShowdownAPI.Services;
 
-public class WeaponsService
+public class WeaponsService : IWeaponsService
 {
-    private readonly WeaponsRepository _weaponsRepository;
+    private readonly IWeaponsRepository _weaponsRepository;
     
-    public WeaponsService(WeaponsRepository weaponsRepository)
+    public WeaponsService(IWeaponsRepository weaponsRepository)
     {
         _weaponsRepository = weaponsRepository;
     }
