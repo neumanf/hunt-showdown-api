@@ -1,6 +1,6 @@
 using HuntShowdownAPI.Models;
 
-namespace HuntShowdownAPI.Services;
+namespace HuntShowdownAPI.Interfaces.Services;
 
 public interface IWeaponsService
 {

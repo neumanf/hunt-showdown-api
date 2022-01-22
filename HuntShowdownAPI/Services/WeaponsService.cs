@@ -1,6 +1,6 @@
-using HuntShowdownAPI.Data;
+using HuntShowdownAPI.Interfaces.Repositories;
+using HuntShowdownAPI.Interfaces.Services;
 using HuntShowdownAPI.Models;
-using HuntShowdownAPI.Repositories;
 
 namespace HuntShowdownAPI.Services;
 

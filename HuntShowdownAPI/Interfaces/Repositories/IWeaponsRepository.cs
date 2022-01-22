@@ -1,6 +1,6 @@
 using HuntShowdownAPI.Models;
 
-namespace HuntShowdownAPI.Repositories;
+namespace HuntShowdownAPI.Interfaces.Repositories;
 
 public interface IWeaponsRepository
 {

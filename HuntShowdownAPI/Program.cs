@@ -1,4 +1,6 @@
 using HuntShowdownAPI.Data;
+using HuntShowdownAPI.Interfaces.Repositories;
+using HuntShowdownAPI.Interfaces.Services;
 using HuntShowdownAPI.Repositories;
 using HuntShowdownAPI.Services;
 using Microsoft.EntityFrameworkCore;

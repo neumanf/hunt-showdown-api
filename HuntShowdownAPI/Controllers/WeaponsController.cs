@@ -1,3 +1,4 @@
+using HuntShowdownAPI.Interfaces.Services;
 using HuntShowdownAPI.Services;
 using Microsoft.AspNetCore.Mvc;
 

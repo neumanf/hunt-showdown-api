@@ -1,8 +1,8 @@
 using System.Collections.Generic;
 using System.Threading.Tasks;
 using FluentAssertions;
+using HuntShowdownAPI.Interfaces.Repositories;
 using HuntShowdownAPI.Models;
-using HuntShowdownAPI.Repositories;
 using HuntShowdownAPI.Services;
 using Moq;
 using Xunit;
